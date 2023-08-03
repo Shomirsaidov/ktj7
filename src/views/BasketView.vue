@@ -172,7 +172,7 @@ import '../assets/utils.css'
                 let price = 0;
                 if(this.info !== null && this.info.length !== 0) {
                     this.info.forEach(element => {
-                        price += element.cur_price 
+                        price += element.cur_price * element.quantity
                     });
                 }
                 return price
