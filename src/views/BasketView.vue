@@ -122,7 +122,7 @@ import '../assets/utils.css'
                                 address: `${this.city}, ${this.address}`,
                                 pay_type: this.computePayType,
                                 card: this.cardNumber,
-                                total_price: book.cur_price
+                                total_price: book.cur_price * book.quantity
                             })
 
 
