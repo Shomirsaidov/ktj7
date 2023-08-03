@@ -46,11 +46,7 @@
                 <td class="border-2 md:p-2 font-semibold">Номер кошелька</td>
                 <td class="border-2 md:p-2 font-semibold">Состояние</td>
             </tr>
-            <tr class="border-2  p-2 shadow-md hover:bg-gray-200 cursor-pointer" @click="() => {
-                this.editMode = true
-                this.orderToEdit = delivery.id
-                document.documentElement.scrollTo(0,0)
-        }" 
+            <tr class="border-2  p-2 shadow-md hover:bg-gray-200 cursor-pointer" @click="gotoEdit" 
             v-for="(delivery, index) in data" :key="index">
                 <td class="border-2 md:p-2">{{ delivery.date }}</td>            
                 <td class="border-2 md:p-2">{{ delivery.client_name }}</td>
@@ -118,6 +114,11 @@
                 } else {
                     return 'bg-gray-200 p-2 rounded-xl'
                 }
+            },
+            gotoEdit() {
+                this.editMode = true
+                this.orderToEdit = delivery.id
+                document.documentElement.scrollTo(0,0)
             },
             async editOrder(orderId, status) {
                 await axios.post(`${process.env.VUE_APP_API_URL}/editOrderStatus`, {
