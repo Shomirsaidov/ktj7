@@ -172,9 +172,11 @@
         }
       },
       isAdmin() {
-        if(JSON.parse(localStorage.kitobtj).username == 'admin') {
-          console.log('admin welcome !!!')
-          return true 
+        if(localStorage.kitobtj !== undefined) {
+          if(JSON.parse(localStorage.kitobtj).username == 'admin') {
+            console.log('admin welcome !!!')
+            return true 
+          }
         }
         return false
       }
