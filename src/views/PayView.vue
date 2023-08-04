@@ -5,3 +5,11 @@
   </div>
 
 </template>
+
+<script>
+  export default {
+    mounted() {
+      document.documentElement.scrollTo(0,0)
+    }
+  }
+</script>
