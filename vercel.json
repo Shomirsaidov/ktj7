@@ -3,8 +3,13 @@
   "framework": "vue",
   "headers": [
     {
-      "key": "X-Robots-Tag",
-      "value": "index,follow"
+      "source": "/(.*)",
+      "headers": [ 
+        {
+          "key": "X-Robots-Tag",
+          "value": "index,follow"
+        }
+      ]
     }
   ]
 }
