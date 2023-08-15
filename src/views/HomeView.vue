@@ -17,9 +17,9 @@
     <div class="flex items-stretch space-x-4 overflow-x-auto slider" style="scroll-snap-type: x mandatory;">
 
       <div class="card border-2 p-4 rounded-lg hover:shadow-xl flex flex-col justify-between" v-for="(book,index) in data.sales"
-      :key="index" style="max-width: 170px;" @click="navigate('/book/' + book.id)">
+      :key="index" style="max-width: 170px;">
         <div>
-          <div class="book_images">
+          <div class="book_images" style="min-height: 230px;">
             <img :src="book.cover" alt="" height="280" width="150">
           </div>
           <h3 class="text-start text-md mt-4 mb-2 text-grey-500 line-through">{{ book.prev_price }} c.</h3>
@@ -42,7 +42,7 @@
               <img src="../assets/star_active.png" alt="" width="25" v-for="star in book.stars"> 
           </div>
           <div class="flex items-stretch justify-between space-x-2">
-            <button style="background: #26a9e0;flex: 1;" class="px-4 rounded-lg font-bold text-lg text-white" >Подробнее</button>
+            <button style="background: #26a9e0;flex: 1;" class="px-4 rounded-lg font-bold text-lg text-white" @click="navigate('/book/' + book.id)">Подробнее</button>
             <img src="../assets/bookmark-2.svg" alt="" width="45" class="p-2 rounded-xl" 
             style="background: #ecf6fe;">
           </div>
@@ -74,9 +74,9 @@
     <div class="flex items-stretch space-x-4 overflow-x-auto slider" style="scroll-snap-type: x mandatory;">
 
       <div class="card border-2 p-4 rounded-lg hover:shadow-xl flex flex-col justify-between" v-for="(book,index) in data.newBooks"
-      :key="index" style="max-width: 170px;" @click="navigate('/book/' + book.id)">
+      :key="index" style="max-width: 170px;">
         <div>
-          <div class="book_images">
+          <div class="book_images" style="min-height: 230px;">
             <img :src="book.cover" alt="" height="280" width="150">
           </div>
           <div class="flex items-center justify-between mt-4">
@@ -95,7 +95,7 @@
               <img src="../assets/star_active.png" alt="" width="25" v-for="star in book.stars"> 
           </div>
           <div class="flex items-stretch justify-between space-x-2">
-            <button style="background: #26a9e0;flex: 1;" class="px-4 rounded-lg font-bold text-lg text-white" >Подробнее</button>
+            <button style="background: #26a9e0;flex: 1;" class="px-4 rounded-lg font-bold text-lg text-white" @click="navigate('/book/' + book.id)">Подробнее</button>
             <img src="../assets/bookmark-2.svg" alt="" width="45" class="p-2 rounded-xl" 
             style="background: #ecf6fe;">
           </div>
@@ -118,9 +118,9 @@
     <div class="flex items-stretch space-x-4 overflow-x-auto slider" style="scroll-snap-type: x mandatory;">
 
       <div class="card border-2 p-4 rounded-lg hover:shadow-xl flex flex-col justify-between" v-for="(book,index) in data.topSelling"
-      :key="index" style="max-width: 170px;" @click="navigate('/book/' + book.id)">
+      :key="index" style="max-width: 170px;">
         <div>
-          <div class="book_images">
+          <div class="book_images" style="min-height: 230px;">
             <img :src="book.cover" alt="" height="280" width="150">
           </div>
           <div class="flex items-center justify-between">
@@ -138,7 +138,7 @@
               <img src="../assets/star_active.png" alt="" width="25" v-for="star in book.stars"> 
           </div>
           <div class="flex items-stretch justify-between space-x-2">
-            <button style="background: #26a9e0;flex: 1;" class="px-4 rounded-lg font-bold text-lg text-white" >Подробнее</button>
+            <button style="background: #26a9e0;flex: 1;" class="px-4 rounded-lg font-bold text-lg text-white" @click="navigate('/book/' + book.id)">Подробнее</button>
             <img src="../assets/bookmark-2.svg" alt="" width="45" class="p-2 rounded-xl" 
             style="background: #ecf6fe;">
           </div>

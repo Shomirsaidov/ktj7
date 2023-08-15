@@ -5,14 +5,14 @@
     <img src="../assets/loader.gif" alt="">
   </div>
 
-  <div class="w-full flex justify-center items-stretch space-x-4 lg:space-x-16 my-8 flex-wrap" v-if="info !== null">
+  <div class="w-full flex items-stretch space-x-4 lg:space-x-16 my-8 flex-wrap md:px-32 md:flex-row flex-col" v-if="info !== null">
 
-    <div class="book_images_big">
+    <div class="flex justify-center">
       <img :src="info.cover" alt="" width="250">
     </div>
 
     <div class="info space-y-2">
-      <div class="flex items-center mt-4 mb-2 space-x-2 mb-4 flex-wrap space-y-2">
+      <div class="flex items-center mt-4 mb-2 space-x-2 mb-4 flex-wrap">
         <h3 class="text-sm font-semibold px-4 text-white rounded-sm" style="background: #785eea; max-width: 200px;" v-for="tag in info.tags">{{ tag }}</h3>
       </div>
       <h1 class="text-start text-xl font-semibold" style="color: #f34a57;">{{ info.name }}</h1>
@@ -99,9 +99,15 @@
 
   </div>
 
-  <div style="background: #ecf6fe; color: #000;" class="lg:px-80 py-8 px-8 text-start"  v-if="info !== null">
+  <div style="background: #ecf6fe; color: #000;" class="lg:px-32 lg:max-w-1/4 py-8 px-8 text-start"  v-if="info !== null">
     <h2 style="color:#000;" class="text-lg font-bold mb-2">Описание</h2>
-    {{ info.description }}
+    <p class="lg:w-3/5" v-if="description_collapsed">
+      {{ info.description.slice(0,300) }} 
+      <span class="text-blue-800 cursor-pointer" @click="() => description_collapsed = false">ещё...</span>
+    </p> 
+    <p class="lg:w-3/5 cursor-pointer" v-else @click="() => description_collapsed = true">
+      {{ info.description }}
+    </p>
   </div>
 
     <Similars v-if="info !== null" :similarTo="[info.category]"/>
@@ -129,6 +135,7 @@
     },  
     data: () => ({
       info: null,
+      description_collapsed: true
     }),
     methods: {
       addToCart(id) {
