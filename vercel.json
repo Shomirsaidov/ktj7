@@ -1,0 +1,10 @@
+{
+  "name": "Kitob.tj",
+  "framework": "vue",
+  "build": {
+    "command": "npm run build"
+  },
+  "headers": {
+    "X-Robots-Tag": "index,follow"
+  }
+}
