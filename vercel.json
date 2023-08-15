@@ -1,0 +1,15 @@
+{
+  "name": "Kitob.tj",
+  "framework": "vue",
+  "headers": [
+    {
+      "source": "*",
+      "headers": [ 
+        {
+          "key": "X-Robots-Tag",
+          "value": "index,follow"
+        }
+      ]
+    }
+  ]
+}
