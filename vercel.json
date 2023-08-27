@@ -3,6 +3,7 @@
   "framework": "vue",
   "headers": [
     {
+      "source": "/",
       "headers": [ 
         {
           "key": "X-Robots-Tag",
